@@ -4,14 +4,16 @@
   "extends": [
     "next/core-web-vitals",
     "prettier",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended" // Add this line
   ],
-  "plugins": ["tailwindcss"],
+  "plugins": ["tailwindcss", "prettier"], // Add "prettier" plugin
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
     "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "error"
+    "tailwindcss/classnames-order": "error",
+    "prettier/prettier": "error" // Add this line to enforce Prettier rules
   },
   "settings": {
     "tailwindcss": {

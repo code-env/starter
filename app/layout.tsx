@@ -1,27 +1,22 @@
-import { Inter as FontSans } from "next/font/google"
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 
-import "@/styles/globals.css"
-import { siteConfig } from "@/config/site"
-import { absoluteUrl, cn } from "@/lib/utils"
-import { Toaster } from "@/components/ui/toaster"
-import { Analytics } from "@/components/analytics"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+import "@/styles/globals.css";
+import { ThemeProvider } from "@/providers/theme";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@/components/shared/analytics";
+import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
 
 // Font files can be colocated inside of `pages`
 const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
-})
+});
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const metadata = {
@@ -39,15 +34,15 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "bossadizenith",
+      url: "https://bossadizenith.me",
+    },
+    {
+      name: "romaric250",
+      url: "https://romaric250.me",
     },
   ],
-  creator: "shadcn",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  creator: "bossadizenith",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,7 +56,7 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: "@shadcn",
+    creator: "@bossadizenith",
   },
   icons: {
     icon: "/favicon.ico",
@@ -69,7 +64,7 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
-}
+};
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -77,9 +72,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable
+          "bg-background min-h-screen font-sans antialiased",
+          fontHeading.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -90,5 +84,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
