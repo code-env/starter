@@ -5,15 +5,18 @@
     "next/core-web-vitals",
     "prettier",
     "plugin:tailwindcss/recommended",
-    "plugin:prettier/recommended" // Add this line
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["tailwindcss", "prettier"], // Add "prettier" plugin
+  "plugins": ["tailwindcss", "prettier", "@typescript-eslint"],
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "error",
-    "prettier/prettier": "error" // Add this line to enforce Prettier rules
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "tailwindcss": {
@@ -27,7 +30,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "parser": "@typescript-eslint/parser"
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended"]
     }
   ]
 }

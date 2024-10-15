@@ -9,7 +9,7 @@ const Navbar = () => {
     <header className="bg-background/50 sticky top-0 z-50 h-20 border-b backdrop-blur-lg">
       <div className="container flex h-full items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Icons.laptop />
+          <Icons.logo className="text-primary-foreground size-8" />
           <span>Template</span>
         </Link>
         <ModeToggle />

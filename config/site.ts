@@ -3,11 +3,11 @@ import { SiteConfig } from "types";
 export const siteConfig: SiteConfig = {
   name: "Ground",
   description:
-    "An open source application built using the new router, server components and everything new in Next.js 13.",
-  url: "https://tx.shadcn.com",
-  ogImage: "https://tx.shadcn.com/og.jpg",
+    "Gettings started with your nextjs project in seconds with Ground.",
+  url: "https://starter.bossadizenith.me/",
+  ogImage: "https://starter.bossadizenith.me/og.jpg",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ground",
+    twitter: "https://twitter.com/bossadizenith",
+    github: "https://github.com/code-env/framer-ground",
   },
 };
