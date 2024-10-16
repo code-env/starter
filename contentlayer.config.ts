@@ -7,12 +7,12 @@ import remarkGfm from "remark-gfm";
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    type: "string" as const,
+    resolve: (doc: any) => `/${doc._raw.flattenedPath}`,
   },
   slugAsParams: {
-    type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    type: "string" as const,
+    resolve: (doc: any) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
   },
 };
 
